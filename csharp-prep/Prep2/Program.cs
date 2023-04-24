@@ -4,11 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        console.write("What is your grade percentage?");
-        string userGrade = console.readline();
+        Console.Write("What is your grade percentage?");
+        string userGrade = Console.ReadLine();
 
-        int grade = int.parse(userGrade);
-        string letter = ""
+        int grade = int.Parse(userGrade);
+        string letter = "";
 
         if (grade >= 90)
         {
@@ -16,30 +16,30 @@ class Program
         }
         else if (grade >= 80)
         {
-            letter = "B"
+            letter = "B";
         }
         else if (grade >=70)
         {
-            letter = "C"
+            letter = "C";
         }
         else if (grade >= 60)
         {
-            letter = "D"
+            letter = "D";
         }
         else
         {
-            letter = "F"
+            letter = "F";
         }
 
-        console.writeline($"You got a {letter}")
+        Console.WriteLine($"You got a {letter}");
 
         if (grade >= 70)
         {
-            console.writeline("You passed the class!")
+            Console.WriteLine("You passed the class!");
         }
         else
         {
-            console.writeline("You failed")
+            Console.WriteLine("You failed");
         }
     }
 }
