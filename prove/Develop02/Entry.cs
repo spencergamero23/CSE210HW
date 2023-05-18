@@ -17,6 +17,11 @@ namespace Develop02
     
         }
 
+        public string ConvertToStringForFile()
+        {
+            return $"{date}|{prompt}|{response}";
+        }
+
         public void Hold(string prompt, string response, string date)
         {
             this.prompt = prompt;
