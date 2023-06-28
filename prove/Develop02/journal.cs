@@ -16,7 +16,7 @@ namespace Develop02
 
         public void AddEntry(Entry entry)
         {
-            if(!entries.Contains(entry))
+            if(! entries.Contains(entry))
             {
                 entries.Add(entry);
             }

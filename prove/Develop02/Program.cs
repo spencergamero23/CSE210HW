@@ -24,8 +24,7 @@ namespace Develop02
             //for the Save function
             Saver saver = new Saver();
 
-
-            while(input != "Quit")
+            while(input != "Quit" || input != "5")
             {
                 Console.WriteLine("Welcome to the Journal Program!");
                 Console.WriteLine("Please select one of the following choices");
@@ -35,6 +34,8 @@ namespace Develop02
                 Console.WriteLine("4. Save");
                 Console.WriteLine("5. Quit");
                 Console.WriteLine("What would you like to do? ");
+
+                input = Console.ReadLine();
                 
 
                 if(input == "Write" || input == "1")

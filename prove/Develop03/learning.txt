@@ -1,0 +1,4 @@
+* Dereferencing
+* Thomas Edison Sonogram (keep improving)
+* You have to be specific
+*IO Device doesn't need to be returned or a parameter

@@ -2,12 +2,16 @@ namespace Develop03
 {
     public class Reference
     {
-        string _book;
-        int _chapter;
-        int _verseFrom;
-        int _verseTo;
+        public string _book;
+        public int _chapter;
+        public int _verseFrom;
+        public  int _verseTo;
 
-        public Reference(string book, int chapter, int verseFrom)
+        // * Construtors are the name of the class
+        // * Usually contain the necessary attributes for the class as parameters
+        // * Allows you to assign values to member variables
+        // * Is executed upon class creation.
+        public Reference (string book, int chapter, int verseFrom)
         {
             _book = book;
             _chapter = chapter;
@@ -19,7 +23,13 @@ namespace Develop03
             _book = book;
             _chapter = chapter;
             _verseFrom = verseFrom;
-            _verseFrom = verseTo;
+            _verseTo = verseTo;
         }
+
+        public string ReferenceReturn()
+        {
+            return {_book}, {_chapter}, {_verseFrom},{_verseTo};
+        }
+
     }
 }

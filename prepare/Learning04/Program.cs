@@ -1,9 +1,23 @@
 using System;
-
-class Program
+namespace Learning04
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello Learning04 World!");
+        static void Main(string[] args)
+        {
+            Assignment assignment = new Assignment("Spencer Gamero", "Fractions");
+            
+            Console.WriteLine(assignment.GetSummary());
+
+            MathAssignment ma = new MathAssignment("Bingus", "Fractions","7.3","8-19");
+
+            Console.WriteLine(ma.GetSummary());
+            Console.WriteLine(ma.GetHomeWorkList());
+
+            WritingAssignment wa = new WritingAssignment("Chungus", "History", "The Causes of World War II");
+            Console.WriteLine(wa.GetSummary());
+            Console.WriteLine(wa.GetWritingInformation());
+            
+        }
     }
 }

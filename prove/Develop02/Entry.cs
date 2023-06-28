@@ -13,7 +13,7 @@ namespace Develop02
 
         public string ConvertToString()
         {
-            return $"{date}\n {prompt}\n {response}\n";
+            return $"{date}\n{prompt}\n{response}\n";
     
         }
 

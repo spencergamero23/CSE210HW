@@ -16,7 +16,6 @@ namespace Develop02
                 {
                     string data = entry.ConvertToStringForFile();
                     outputFile.WriteLine(data);
-                    
                 }
             }
         }

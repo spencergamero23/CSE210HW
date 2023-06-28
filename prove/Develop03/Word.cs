@@ -2,9 +2,9 @@ namespace Develop03
 {
     public class Word
     {
-        string _word;
+        public string _word;
 
-        bool _isVisible;
+        public bool _isVisible;
 
         public Word(string word)
         {
@@ -12,22 +12,28 @@ namespace Develop03
             _isVisible = true;
         }
 
-        private void Hide()
+        public void Hide()
         {
-            
+            _word = "_ _ _";
         }
         private void Show()
         {
-
         }
         private void IsHidden()
         {
-
+            if (_isVisible != true)
+            {
+                Hide();
+            }
+            else{
+                Show();
+            }
         }
-        private string GetRenderedText()
-        {
+        //  ///private string GetRenderedText()
+        // {
+        //     return 
+        // }
 
-        }
 
     }
 }
