@@ -2,43 +2,54 @@ namespace Develop03
 {
     public class Scripture
     {
-        List <string> words = new List<string>{};
-        string _reference;
-        string _text;
-        int indexCounter = 0;
-        int hiddenCounter = 0;
-        public Scripture(string reference, string text)
+       private List <Word> words = new List<Word>{};
+       private Reference _reference;
+       private string _text;
+       private int hiddenCounter = 0;
+
+        public Scripture(Reference reference, string text)
         {   //scripture holds a reference and a text
             _reference = reference;
             _text = text;
+            foreach(string str in text.Split(' '))
+            {
+                Word word = new Word(str);
+                words.Add(word);
+            }
         }
         public void HideWords()
-        {
-            for(int i = 0; i < 3; i++ )
+        {   
+            int number = words.Count;
+            int counter = 0;
+            while(counter < 3 && !IsCompletelyHidden())
             {
-                words[indexCounter] = Hide();
-                indexCounter =+1;
+                Random rndm = new Random();
+                int index = rndm.Next(number);
+
+                if (words.ElementAt(index).IsHidden() == false)
+                {
+                    words.ElementAt(index).Hide();
+                    counter++;
+                    hiddenCounter++;
+                }
             }
         }
 
-        private void IsCompletelyHidden()
+        public bool IsCompletelyHidden()
         {
-            foreach(string word in words)
-            {
-                if(word == "_ _ _")
-                {
-                    hiddenCounter =+1;
-                }
-                else
-                {
-                    hiddenCounter =+0;
-                }
+            return hiddenCounter == words.Count;
+        }
 
-                if(hiddenCounter == 46)
-                {
-                    Console.Clear();
-                }
+        public string GetRenderedText()
+        {
+            string neWord = _reference.ReferenceReturn() + " ";
+
+            foreach(Word word in words)
+            {
+                neWord += word.GetRenderedText();
+                neWord += " ";
             }
+            return neWord;
         }
 
     }

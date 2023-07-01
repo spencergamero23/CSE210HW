@@ -1,7 +1,7 @@
 using System;
 namespace Develop04
 {
-    public class BreatingActivities : Activities
+    public class BreathingActivities : Activities
     {
         public void Breathing()
         {

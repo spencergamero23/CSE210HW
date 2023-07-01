@@ -2,10 +2,10 @@ namespace Develop03
 {
     public class Reference
     {
-        public string _book;
-        public int _chapter;
-        public int _verseFrom;
-        public  int _verseTo;
+        private string _book;
+        private int _chapter;
+        private int _verseFrom;
+        private  int _verseTo;
 
         // * Construtors are the name of the class
         // * Usually contain the necessary attributes for the class as parameters
@@ -28,7 +28,12 @@ namespace Develop03
 
         public string ReferenceReturn()
         {
-            return {_book}, {_chapter}, {_verseFrom},{_verseTo};
+            if (_verseFrom == _verseTo)
+            {
+                return $"{_book} {_chapter}:{_verseFrom}";    
+            }
+            
+                return $"{_book} {_chapter}:{_verseFrom} - {_verseTo}";
         }
 
     }

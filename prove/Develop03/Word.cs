@@ -2,37 +2,40 @@ namespace Develop03
 {
     public class Word
     {
-        public string _word;
+        private string _word;
 
-        public bool _isVisible;
+        private bool _isVisible;
+
+        private string _hiddenWord = "";
 
         public Word(string word)
         {
             _word = word;
             _isVisible = true;
+            int wordLength= _word.Length;
+            for (int i = 0; i < wordLength; i++)
+            {
+                _hiddenWord += '_';
+            }
         }
 
         public void Hide()
         {
-            _word = "_ _ _";
+           _isVisible = false;
         }
-        private void Show()
+        public void Show()
         {
+            _isVisible = true;
         }
-        private void IsHidden()
+        public bool IsHidden()
         {
-            if (_isVisible != true)
-            {
-                Hide();
-            }
-            else{
-                Show();
-            }
+            return !_isVisible;
+
         }
-        //  ///private string GetRenderedText()
-        // {
-        //     return 
-        // }
+         public string GetRenderedText()
+        {
+            return _isVisible ? _word : _hiddenWord; // short hand for if _isVisible is true then _word else hiddenWord
+        }
 
 
     }
