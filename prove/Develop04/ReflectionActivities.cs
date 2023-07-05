@@ -8,7 +8,26 @@ namespace Develop04
 
         public ReflectionActivities()
         {
+            
+        }
 
+        public void ReflectStartPrompt()
+        {
+            Random rndmStartPrompt = new Random();
+            int index = rndmStartPrompt.Next(0,3);
+            Console.WriteLine(_startPrompts[index]);
+        }
+
+        public void Reflect(int length)
+        {
+            Random rndmEndPrompt = new Random();
+            for(int i =0; i < length; i++)
+            {
+                int index = rndmEndPrompt.Next(0,8);
+                Console.WriteLine(_endPrompts[index]);
+                Thread.Sleep(10000);
+                base.Animation();
+            }
         }
 
     }

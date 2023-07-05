@@ -10,8 +10,9 @@ namespace Develop04
             string rMessage = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
             string lMessage = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
             string input = "";
+            string actInput = "";
+            int seconds = 0;
 
-            Activities activities = new Activities();
             BreathingActivities breathing = new BreathingActivities();
             ReflectionActivities reflection = new ReflectionActivities();
             ListingActivities listing = new ListingActivities();
@@ -27,32 +28,48 @@ namespace Develop04
                 input = Console.ReadLine();
 
                 if (input == "1")
-                {
-                    breathing.SayActivity(bMessage);
+                {   
+                    Console.Clear();
+                    Console.WriteLine("Welcome to the Breathing Activity");
+                    Console.WriteLine(breathing.SayActivity(bMessage));
+                    Console.WriteLine("How long in seconds, would you like for your session? ");
+                    actInput = Console.ReadLine();
+                    seconds = int.Parse(actInput);
+                    breathing.Timer(seconds, input, breathing, reflection, listing);
 
                 }
                 else if(input == "2")
                 {
-                    reflection.SayActivity(rMessage);
+                    Console.Clear();
+                    Console.WriteLine("Welcome to the Reflection Activity");
+                    Console.WriteLine(reflection.SayActivity(rMessage));
+                    Console.WriteLine("How long in seconds, would you like for your session? ");
+                    actInput = Console.ReadLine();
+                    seconds = int.Parse(actInput);
+                    reflection.Timer(seconds, input, breathing, reflection, listing);
 
                 }
                 else if (input == "3")
                 {
-                    listing.SayActivity(lMessage);
+                    Console.Clear();
+                    Console.WriteLine("Welcome to the Breathing Activity");
+                    Console.WriteLine(breathing.SayActivity(lMessage));
+                    Console.WriteLine("How long in seconds, would you like for your session? ");
+                    actInput = Console.ReadLine();
+                    seconds = int.Parse(actInput);
+                    listing.Timer(seconds, input, breathing, reflection, listing);
                 }
                 else if (input == "4")
                 {
-
+                    Console.Clear();
+                    Console.WriteLine("Thanks for participating");
                 }
                 else
                 {
-
+                    Console.WriteLine("ERROR INCORRECT INPUT");
                 }
             
             }
-
-            
-
         }
     }
 }
