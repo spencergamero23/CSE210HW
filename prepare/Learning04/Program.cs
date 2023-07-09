@@ -12,7 +12,7 @@ namespace Learning04
             MathAssignment ma = new MathAssignment("Bingus", "Fractions","7.3","8-19");
 
             Console.WriteLine(ma.GetSummary());
-            Console.WriteLine(ma.GetHomeWorkList());
+            Console.WriteLine(ma.GetHomeworkList());
 
             WritingAssignment wa = new WritingAssignment("Chungus", "History", "The Causes of World War II");
             Console.WriteLine(wa.GetSummary());
