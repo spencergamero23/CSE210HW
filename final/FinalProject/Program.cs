@@ -6,14 +6,14 @@ namespace FinalProject
         static void Main(string[] args)
         {
             string userInput = "";
-            Favorite favorites = new Favorite();
-            Dislike dislikes = new Dislike();
+            MusicList favorites = new MusicList();
+            MusicList dislikes = new MusicList();
             Playlist playlist = new Playlist();
             Saver save = new Saver();
             Loader load = new Loader();
             EntryChoice choice = new EntryChoice();
 
-
+            load.LoadMusic(favorites, dislikes);
 
             while(userInput != "6")
             {
@@ -24,8 +24,7 @@ namespace FinalProject
                 Console.WriteLine(" 2. Enter an album");
                 Console.WriteLine(" 3. Make a playlist");
                 Console.WriteLine(" 4. Save");
-                Console.WriteLine(" 5. Load");
-                Console.WriteLine(" 6. Quit");
+                Console.WriteLine(" 5. Quit");
                 
                 userInput = Console.ReadLine();
 
@@ -48,20 +47,12 @@ namespace FinalProject
                 }
                 else if(userInput == "5")
                 {
-                    load.LoadFavSongs(favorites);
-                }
-                else if(userInput == "6")
-                {
                     Console.WriteLine("Thanks for participating!");
                 }
                 else
                 {
                     Console.WriteLine("ERROR INCORRECT INPUT");
                 }
-
-
-
-
             }
         }
     }

@@ -3,7 +3,7 @@ namespace FinalProject
 {
     public class EntryChoice
     {
-        public void Choose(string userInput, Favorite favorite, Dislike dislike)
+        public void Choose(string userInput, MusicList favorite, MusicList dislike)
         {
             string name = "";
             string artist = "";

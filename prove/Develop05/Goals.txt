@@ -1,0 +1,4 @@
+0
+SimpleGoal: Finish,hw,100,False
+EternalGoal: Type,Keep typing,10
+CheckListGoal: Finish assignments,finishing 3 missing assingmnets,100,300,2,0

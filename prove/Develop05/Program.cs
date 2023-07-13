@@ -6,14 +6,12 @@ namespace Develop05
     {
         static void Main(string[] args)
         {
-            Goal goal = new Goal();
-
-            int points = 0;
+            List<Goal> goals = new List<Goal>();
             string userInput = "";
-
+            int points = 0;
             while( userInput != "6")
             {
-                Console.WriteLine(goal.CurrentPoints(points));
+                Console.WriteLine($"Total points: {points}");
                 Console.WriteLine("Menu Options:");
                 Console.WriteLine(" 1. Create New Goal");
                 Console.WriteLine(" 2. List Goals");
@@ -27,23 +25,79 @@ namespace Develop05
 
                 if(userInput == "1")
                 {
-                    goal.AssignName();
+                    Console.WriteLine("The types of goals are:");
+                    Console.WriteLine("1. Simple Goal");
+                    Console.WriteLine("2. Eternal Goal");
+                    Console.WriteLine("3. Checklist Goal");
+                    Console.WriteLine("Which type of goal would you like to create? ");
+                    userInput = Console.ReadLine();
+                    if(userInput == "1")
+                    {
+                        SimpleGoal simple = new SimpleGoal();
+                        simple.AssignName();
+                        simple.AssignDescription();
+                        simple.AssignPoints();
+                        goals.Add(simple);
+                        
+                    }
+                    else if(userInput == "2")
+                    {
+                        EternalGoal eternal = new EternalGoal();
+                        eternal.AssignName();
+                        eternal.AssignDescription();
+                        eternal.AssignPoints();
+                        goals.Add(eternal);
+                    }
+                    else if(userInput == "3")
+                    {
+                        ChecklistGoal checklist = new ChecklistGoal();
+                        checklist.AssignName();
+                        checklist.AssignDescription();
+                        checklist.AssignPoints();
+                        checklist.AssignRepitions();
+                        checklist.AssignBonus();
+                        goals.Add(checklist);
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR TRY AGAIN");
+                    }
                 }
                 else if(userInput == "2")
                 {
-
+                    foreach(Goal goal in goals)
+                    {
+                        goal.ConvertToString();
+                    }
                 }
                 else if(userInput == "3")
                 {
-
+                    Saver.SaveGoals(goals, points);
                 }
                 else if(userInput == "4")
                 {
-
+                    Loader.LoadGoals(goals,ref points);
                 }
                 else if(userInput == "5")
                 {
-
+                    int counter = 0;
+                    foreach(Goal goal in goals)
+                    {
+                        counter++;
+                        Console.WriteLine($"{counter}. {goal.GoalName}");
+                    }
+                    Console.WriteLine("Which goal did you accomplish? ");
+                    userInput = Console.ReadLine();
+                    int index = int.Parse(userInput);
+                    index -= 1;
+                    if (index < goals.Count || index >= 0)
+                    {
+                        goals[index].MarkComplete(ref points);
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR INCORRECT INPUT");
+                    }
                 }
                 else if(userInput == "6")
                 {

@@ -1,12 +1,14 @@
 using System;
 namespace FinalProject
 {
-    public class Favorite : List
+    public class MusicList : List
     {
         private List<SongEntry> _favSongs;
         private List<AlbumEntry> _favAlbums;
+        public List<SongEntry> Songs => _favSongs;
 
-        public Favorite()
+
+        public MusicList()
         {
             _favSongs = new List<SongEntry>();
             _favAlbums = new List<AlbumEntry>();
@@ -36,13 +38,8 @@ namespace FinalProject
 
         public int FavoriteSongCount()
         {
-            int numFavSongs = _favSongs.Count;
-            
+            int numFavSongs = _favSongs.Count;   
             return numFavSongs;
         }
-
-
-        
-
     }
 }
